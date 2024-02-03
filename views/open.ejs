@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>OpenAI Chat</title>
+</head>
+<body>
+  <h1>OpenAI Chat</h1>
+  
+  <form action="/generate-response" method="post">
+    <label for="userMessage">Mensaje del usuario:</label>
+    <input type="text" name="userMessage" id="userMessage" required>
+    <button type="submit">Enviar</button>
+  </form>
+
+  <% if (userMessage) { %>
+    <p><strong>Mensaje del usuario:</strong> <%= userMessage %></p>
+  <% } %>
+
+  <% if (response) { %>
+    <p><strong>Respuesta:</strong> <%= response %></p>
+  <% } %>
+</body>
+</html>

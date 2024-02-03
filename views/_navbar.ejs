@@ -1,0 +1,37 @@
+<!-- views/_navbar.ejs -->
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+    <div class="container ">
+      <a class="navbar-brand" href="#">MathWorld</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="/home">Inicio</a>
+          </li>
+          <li class="nav-item-">
+            <!-- Agregar una lista desplegable -->
+            <div class="dropdown">
+              <a class="nav-link dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Contenido Educativo
+              </a>
+              <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                <!-- Opciones de la lista desplegable -->
+                <a class="dropdown-item" href="/lecciones">Lecciones Interactivas</a>
+                <a class="dropdown-item" href="#">Ejercicios Adaptativos</a>
+                <a class="dropdown-item" href="#">Juegos Educativos</a>
+                <!-- Puedes agregar más opciones según sea necesario -->
+              </div>
+            </div>
+          </li>
+          <form class="d-flex ms-auto" role="search">
+            <input class="form-control me-2" type="search" placeholder="Buscar" aria-label="Search">
+            <button class="btn btn-outline-success" type="submit">Search</button>
+          </form>
+          <!-- Puedes agregar más elementos del menú según sea necesario -->
+        </ul>
+      </div>
+    </div>
+  </nav>

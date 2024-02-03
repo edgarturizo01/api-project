@@ -1,0 +1,136 @@
+<!-- views/home.ejs -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MathWorld Explora - Contenido</title>
+  <!-- Agregar enlaces a Bootstrap y popper.js -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+  <!-- ... Estilos adicionales ... -->
+  <link rel="stylesheet" href="/public/styles/estilos.css">
+  <style>
+    /* Estilos personalizados para el video */
+    #video-container {
+  
+      height: 50vh; /* 50% de la altura de la ventana */
+      width: 80vw;  /* 80% del ancho de la ventana */
+      margin: auto; /* Centra el contenedor horizontalmente */
+      
+      margin-top: 20px; /* Margen superior */
+      margin-bottom: 20px; /* Margen inferior */
+    }
+
+    #video-container video {
+      width: 100%; /* 100% del ancho del contenedor */
+      height: 100%; /* 100% de la altura del contenedor */
+      object-fit: cover; /* Escala el video para cubrir completamente el contenedor */
+    }
+    
+    .chat-flotante {
+
+	color: #181616; /* Color del texto */
+	border-radius: 5px; /* Borde del boton */
+	background-color: #e4dbde; /* Color de fondo */
+	padding: 18px 30px; /* Relleno del boton */
+	position: fixed;
+	bottom: 40px;
+	right: 40px;
+	transition: all 300ms ease 0ms;
+	box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+	z-index: 99;
+    width: 30%;
+}
+.chat-flotante:hover {
+	box-shadow: 0px 15px 20px rgba(0, 0, 0, 0.3);
+	transform: translateY(-7px);
+}
+
+
+
+
+  </style>
+</head>
+<body>
+  <!-- Incluir el menú de navegación -->
+  <%- include('_navbar.ejs') %>
+ 
+   <div class=" container chat-flotante">
+
+
+    <% if (response) { %>
+        <p><strong>Respuesta:</strong> <%= response %></p>
+      <% } %>
+    <p></p>
+
+  <form class="form-floating" action="/generate-response" method="post">
+    <input type="text" class="form-control" name="userMessage" id="userMessage" required placeholder="" value="¿Que es una variable?">
+    <label for="userMessage">Preguntale a tu amigo Edgar</label>
+    <button type="submit" class="btn btn-primary btn-lg">Let´s go</button>
+  </form>
+  
+  <% if (userMessage) { %>
+    <p><%= userMessage %></p>
+  <% } %>
+
+   </div>
+  
+
+  <!-- Contenido de la página -->
+
+   <!-- Video en la página de inicio -->
+   <div id="video-container">
+    <video controls autoplay>
+      <source src="/media/video.mp4" type="video/mp4">
+      Tu navegador no soporta el tag de video.
+    </video>
+  </div>
+
+
+  <div id="video-container" class="container">
+    <div class="row">
+      <div class="col-md-4">
+        <div class="card" style="width: 18rem;">
+          <img src="/media/cohete.png" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">Lecciones Interactivas 1</h5>
+            <p class="card-text">Contenido multimedia interactivo, como videos cortos, animaciones y juegos educativos, que explican los conceptos matemáticos de manera sencilla y atractiva.</p>
+            <a href="/lecciones" class="btn btn-primary">Ir a explorar</a>
+          </div>
+        </div>
+      </div>
+  
+      <div class="col-md-4">
+        <div class="card" style="width: 18rem;">
+          <img src="/media/cohete.png" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">Ejercicios Adaptativos</h5>
+            <p class="card-text">La plataforma utiliza algoritmos adaptativos para ajustar el nivel de dificultad de los ejercicios según el progreso individual de cada estudiante, asegurando un aprendizaje personalizado.</p>
+            <a href="#" class="btn btn-primary">Ir a explorar</a>
+          </div>
+        </div>
+      </div>
+  
+      <div class="col-md-4">
+        <div class="card" style="width: 18rem;">
+          <img src="/media/cohete.png" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">Juegos Educativos</h5>
+            <p class="card-text">Incorpora juegos lúdicos que refuerzan los conceptos aprendidos, haciendo que el aprendizaje sea divertido y motivador.</p>
+            <a href="#" class="btn btn-primary">Ir a explorar</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+ 
+
+  
+
+  <!-- Agregar scripts de Bootstrap y popper.js al final del cuerpo -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

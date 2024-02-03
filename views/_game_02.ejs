@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    /* Estilos del juego (previamente proporcionados) */
+    body {
+      font-family: 'Arial', sans-serif;
+      background-color: #f0f0f0;
+      text-align: center;
+    }
+
+    #game-container {
+      max-width: 800px;
+      margin: 20px auto;
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    #box-container {
+      display: flex;
+      justify-content: space-around;
+      margin-top: 20px;
+    }
+
+    .box {
+      width: 100px;
+      height: 100px;
+      background-color: #87CEEB;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 20px;
+      font-weight: bold;
+      color: #fff;
+      cursor: pointer;
+      border-radius: 5px;
+    }
+
+    #challenge-container {
+      margin-top: 20px;
+    }
+
+    #answer-input {
+      padding: 5px;
+      margin-right: 10px;
+    }
+
+    button {
+      padding: 8px 16px;
+      font-size: 16px;
+      cursor: pointer;
+      background-color: #4CAF50;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+    }
+
+    button:hover {
+      background-color: #45a049;
+    }
+  </style>
+</head>
+<body>
+  <div id="game-container">
+    <h1>Bienvenido a la Aventura de las Cajas Mágicas</h1>
+
+    <!-- Sección interactiva de instrucciones -->
+    <div id="instructions-container">
+      <h2>Instrucciones</h2>
+      <p>Bienvenido al emocionante mundo de las Cajas Mágicas. Tu misión es resolver desafíos matemáticos para descubrir los números ocultos en las cajas.</p>
+      <p>Haz clic en las cajas para seleccionarlas y resuelve el desafío que se presenta. ¡Hazlo bien y descubre el número mágico dentro!</p>
+    </div>
+
+    <div id="box-container">
+      <% for (let i = 0; i < variables.length; i++) { %>
+        <div class="box" onclick="selectBox(this)"><%= variables[i] %></div>
+      <% } %>
+    </div>
+    <div id="challenge-container">
+      <p id="challenge-text">Resuelve el desafío para abrir la caja mágica</p>
+      <input type="text" id="answer-input" placeholder="Tu respuesta">
+      <button onclick="checkAnswer()">¡Abrir Caja!</button>
+    </div>
+  </div>
+
+  <script>
+    const boxContainer = document.getElementById('box-container');
+    const challengeText = document.getElementById('challenge-text');
+    const answerInput = document.getElementById('answer-input');
+
+    const variables = ['x', 'y', 'z'];
+    let currentBox;
+    let correctAnswer;
+
+    function generateRandomNumber() {
+      return Math.floor(Math.random() * 10) + 1;
+    }
+
+    function selectBox(box) {
+      currentBox = box;
+      correctAnswer = generateRandomNumber();
+      challengeText.textContent = `Resuelve: ${currentBox.textContent} + 3 = ${correctAnswer}`;
+    }
+
+    function checkAnswer() {
+  const userAnswer = parseInt(answerInput.value);
+  if (!isNaN(userAnswer) && userAnswer === correctAnswer) {
+    currentBox.textContent = correctAnswer;
+    currentBox.style.backgroundColor = '#4CAF50';
+    challengeText.textContent = '¡Bien hecho! ¿Quieres abrir otra caja?';
+  } else {
+    challengeText.textContent = 'Respuesta incorrecta. Inténtalo de nuevo.';
+  }
+  answerInput.value = '';
+}
+  </script>
+</body>
+</html>

@@ -1,0 +1,83 @@
+<!-- views/lecciones.ejs -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lecciones Interactivas</title>
+  <!-- Agregar enlaces a Bootstrap y popper.js -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+  <!-- ... Estilos adicionales ... -->
+  <style>
+    #lecciones {
+        margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+ <!-- Incluir el menú de navegación -->
+  <%- include('_navbar.ejs') %>
+  <div class="container mt-5">
+    <h1 class="mb-4">Lecciones Interactivas</h1>
+
+    <!-- Lista de lecciones -->
+    <ul class="list-group">
+      <li id="lecciones" class="list-group-item">
+        <h5 class="mb-1">Lección 1: Explorando Números y Operaciones</h5>
+        <p class="mb-1">Los estudiantes interactúan con un juego de construcción de números y operaciones básicas, descubriendo la relación entre ellos y desarrollando habilidades fundamentales.</p>
+        <a href="/lec01" class="btn btn-primary">Ir a la lección</a>
+      </li>
+      <li id="lecciones" class="list-group-item">
+        <h5 class="mb-1">Lección 2: Detectives de Variables</h5>
+        <p class="mb-1">A través de una historia detectivesca, los estudiantes se convierten en detectives de variables, resolviendo misterios y aprendiendo a identificar y utilizar variables en expresiones matemáticas.</p>
+        <a href="/lec02" class="btn btn-primary">Ir a la lección</a>
+      </li>
+      <li id="lecciones" class="list-group-item">
+        <h5 class="mb-1">Lección 3: Viaje a la Tierra de las Ecuaciones</h5>
+        <p class="mb-1">Los estudiantes embarcan en un viaje interactivo a una tierra llena de ecuaciones. Resuelven desafíos matemáticos para avanzar, fortaleciendo sus habilidades de resolución de ecuaciones.</p>
+        <a href="#" class="btn btn-primary">Ir a la lección</a>
+      </li>
+      <li id="lecciones" class="list-group-item">
+        <h5 class="mb-1">Lección 4: Geometría en Acción</h5>
+        <p class="mb-1">Descripción corta de la lección 2.</p>
+        <a href="#" class="btn btn-primary">Ir a la lección</a>
+      </li>
+      <li id="lecciones" class="list-group-item">
+        <h5 class="mb-1">Lección 5: Programando con Bloques Matemáticos</h5>
+        <p class="mb-1">Introducción a la programación básica usando bloques visuales. Los estudiantes crean algoritmos simples para resolver problemas matemáticos, combinando lógica y matemáticas de manera creativa.</p>
+        <a href="#" class="btn btn-primary">Ir a la lección</a>
+      </li>
+      <li id="lecciones" class="list-group-item">
+        <h5 class="mb-1">Lección 6: Aventuras con Fracciones</h5>
+        <p class="mb-1">A través de juegos interactivos y actividades, los estudiantes exploran el mundo de las fracciones, comprenden su significado y aplican operaciones con fracciones de manera práctica.</p>
+        <a href="#" class="btn btn-primary">Ir a la lección</a>
+      </li>
+      <li id="lecciones" class="list-group-item">
+        <h5 class="mb-1">Lección 7: Desafío de Problemas del Mundo Real</h5>
+        <p class="mb-1">Descripción corta de la lección 2.</p>
+        <a href="#" class="btn btn-primary">Ir a la lección</a>
+      </li>
+      <li id="lecciones" class="list-group-item">
+        <h5 class="mb-1">Lección 8: Cazadores de Patrones</h5>
+        <p class="mb-1">Los estudiantes se convierten en cazadores de patrones, identificando y creando patrones matemáticos en una variedad de contextos, desde secuencias numéricas hasta figuras geométricas.</p>
+        <a href="#" class="btn btn-primary">Ir a la lección</a>
+      </li>
+      <li id="lecciones" class="list-group-item ">
+        <h5 class="mb-1">Lección 9: Simetría y Arte Matemático</h5>
+        <p class="mb-1">Exploración de la simetría en el arte matemático. Los estudiantes crean sus propias obras de arte simétricas y descubren cómo los conceptos matemáticos están presentes en el diseño visual.</p>
+        <a href="#" class="btn btn-primary">Ir a la lección</a>
+      </li>
+      <li id="lecciones" class="list-group-item">
+        <h5 class="mb-1">Lección 10: Competencia Virtual de Álgebra</h5>
+        <p class="mb-1">Los estudiantes participan en una competición virtual donde aplican sus habilidades algebraicas en desafíos cronometrados, fomentando la competencia saludable y la mejora continua.</p>
+        <a href="#" class="btn btn-primary">Ir a la lección</a>
+      </li>
+      <!-- Puedes agregar más elementos según sea necesario -->
+    </ul>
+  </div>
+
+  <!-- Agregar scripts de Bootstrap y popper.js al final del cuerpo -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
